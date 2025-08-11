@@ -703,10 +703,7 @@ const VendorDashboard = () => {
                       <span>{auction.bids} bids</span>
                     </div>
                     <button
-                      onClick={() => {
-                        setSelectedAuction(auction)
-                        setShowBidModal(true)
-                      }}
+                     onClick={() => window.location.href = "/vendor-game"}
                       className="place-bid-btn"
                       disabled={auction.status !== "active"}
                     >
@@ -798,7 +795,7 @@ const VendorDashboard = () => {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label className="form-label">Starting Bid ($)</label>
+                  <label className="form-label">Starting Bid (₹)</label>
                   <input
                     type="number"
                     value={newAuction.startingBid || ""}
@@ -855,79 +852,7 @@ const VendorDashboard = () => {
         </div>
       )}
 
-      {/* Bid Modal */}
-      {showBidModal && selectedAuction && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h2 className="modal-title">Place Bid</h2>
-              <button onClick={() => setShowBidModal(false)} className="modal-close">
-                <XCircle className="close-icon" />
-              </button>
-            </div>
-            <div className="modal-body">
-              <div className="auction-summary">
-                <h3>{selectedAuction.title}</h3>
-                <p>{selectedAuction.qualitySpecs}</p>
-                <div className="summary-details">
-                  <span>Starting Bid: {formatCurrency(selectedAuction.startingBid)}</span>
-                  <span>
-                    Quantity: {selectedAuction.quantity} {selectedAuction.unit}
-                  </span>
-                  <span>Deadline: {selectedAuction.auctionDuration}</span>
-                </div>
-              </div>
-              <div className="bid-form">
-                <div className="form-group">
-                  <label className="form-label">Your Bid Price ($)</label>
-                  <input
-                    type="number"
-                    value={newBid.price || ""}
-                    onChange={(e) =>
-                      setNewBid({
-                        ...newBid,
-                        price: e.target.value ? Number.parseFloat(e.target.value) : 0,
-                      })
-                    }
-                    className="form-input"
-                    min="0"
-                    step="0.01"
-                    placeholder="Enter your bid amount"
-                  />
-                </div>
-                <div className="form-group">
-                  <label className="form-label">Delivery Time</label>
-                  <input
-                    type="text"
-                    value={newBid.deliveryTime}
-                    onChange={(e) => setNewBid({ ...newBid, deliveryTime: e.target.value })}
-                    className="form-input"
-                    placeholder="e.g., 5-7 business days"
-                  />
-                </div>
-                <div className="form-group">
-                  <label className="form-label">Description</label>
-                  <textarea
-                    value={newBid.description}
-                    onChange={(e) => setNewBid({ ...newBid, description: e.target.value })}
-                    className="form-textarea"
-                    placeholder="Describe your offer, terms, warranty, etc."
-                    rows={3}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="modal-footer">
-              <button onClick={() => setShowBidModal(false)} className="btn-secondary">
-                Cancel
-              </button>
-              <button onClick={handleSubmitBid} className="btn-primary">
-                Submit Bid
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+    
 
       {/* View Bids Modal */}
       {selectedAuction && !showBidModal && !showCreateForm && (
@@ -991,6 +916,5 @@ const VendorDashboard = () => {
     </div>
   )
 }
-
 
 export default VendorDashboard
