@@ -85,7 +85,7 @@ interface Supplier {
   strategy?: string
 }
 
-const API_BASE_URL = "${process.env.NEXT_PUBLIC_API_BASE_URL}"
+const API_BASE_URL = "https://rawmart-backend.onrender.com"
 
 export default function VendorBiddingGame() {
   const [gameState, setGameState] = useState<GameState>({
@@ -1525,3 +1525,4 @@ export default function VendorBiddingGame() {
     </div>
   )
 }
+
