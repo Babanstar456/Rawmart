@@ -146,7 +146,7 @@ const isStatusActive = (status: string | null | undefined): boolean => {
   return (status || "").toString().toLowerCase() === "active"
 }
 
-const API_BASE_URL = "${process.env.NEXT_PUBLIC_API_BASE_URL}"
+const API_BASE_URL = "https://rawmart-backend.onrender.com"
 
 export default function BiddingPlatform() {
   // Navigation state
@@ -1542,3 +1542,4 @@ export default function BiddingPlatform() {
     </div>
   )
 }
+
