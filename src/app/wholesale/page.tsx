@@ -133,7 +133,7 @@ const WholesalePanel = () => {
   ]
 
   // API base URL - adjust this to match your server
-  const API_BASE_URL = "${process.env.NEXT_PUBLIC_API_BASE_URL}/api"
+  const API_BASE_URL = "https://rawmart-backend.onrender.com/api"
 
   // Dummy data for current bids
   const dummyCurrentBids = useMemo(() => [
@@ -2060,5 +2060,6 @@ const WholesalePanel = () => {
     </div>
   )
 }
+
 
 export default WholesalePanel
