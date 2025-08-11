@@ -41,6 +41,7 @@ interface ProcessedAuction {
 
 // Interactive Quiz Component for vendor onboarding
 function VendorQuizComponent() {
+  const router = useRouter()
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [answers, setAnswers] = useState<number[]>([])
   const [showResults, setShowResults] = useState(false)
@@ -149,7 +150,7 @@ function VendorQuizComponent() {
           >
             Take Quiz Again
           </button>
-          <button
+          <button  onClick={() => router.push("/login")}
             style={{
               background: "rgba(255,255,255,0.2)",
               color: "white",
@@ -2018,4 +2019,3 @@ export default function RawmartPlatform() {
     </>
   )
 }
-
