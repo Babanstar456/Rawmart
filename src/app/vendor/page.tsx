@@ -145,7 +145,7 @@ const VendorDashboard = () => {
     try {
       console.log("Fetching user auctions for:", firebaseUserId)
 
-      const response = await fetch("${process.env.NEXT_PUBLIC_API_BASE_URL}/api/user-orders", {
+      const response = await fetch("https://rawmart-backend.onrender.com/api/user-orders", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -203,7 +203,7 @@ const VendorDashboard = () => {
     try {
       console.log("Fetching available auctions...")
 
-      const response = await fetch("${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auctions", {
+      const response = await fetch("https://rawmart-backend.onrender.com/api/auctions", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -275,7 +275,7 @@ const VendorDashboard = () => {
     setError(null)
 
     try {
-      const response = await fetch("${process.env.NEXT_PUBLIC_API_BASE_URL}/api/create-auction", {
+      const response = await fetch("https://rawmart-backend.onrender.com/api/create-auction", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -354,7 +354,7 @@ const VendorDashboard = () => {
     setError(null)
 
     try {
-      const response = await fetch("${process.env.NEXT_PUBLIC_API_BASE_URL}/api/stop-auction", {
+      const response = await fetch("https://rawmart-backend.onrender.com/api/stop-auction", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -991,5 +991,6 @@ const VendorDashboard = () => {
     </div>
   )
 }
+
 
 export default VendorDashboard
