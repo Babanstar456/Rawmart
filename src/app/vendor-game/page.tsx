@@ -1525,4 +1525,3 @@ export default function VendorBiddingGame() {
     </div>
   )
 }
-
